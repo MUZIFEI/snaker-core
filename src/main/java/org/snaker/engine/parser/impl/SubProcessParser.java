@@ -40,11 +40,11 @@ public class SubProcessParser extends AbstractNodeParser {
 	protected void parseNode(NodeModel node, Element element) {
 		SubProcessModel model = (SubProcessModel)node;
 		model.setProcessName(element.getAttribute(ATTR_PROCESSNAME));
-		String url = element.getAttribute(ATTR_URL);
-		if(StringHelper.isNotEmpty(url)) {
-			model.setUrl(element.getAttribute(ATTR_URL));
+		String form = element.getAttribute(ATTR_FORM);
+		if(StringHelper.isNotEmpty(form)) {
+			model.setForm(form);
 		} else {
-			model.setUrl(ConfigHelper.getProperty("subprocessurl"));
+			model.setForm(ConfigHelper.getProperty("subprocessurl"));
 		}
 	}
 }
